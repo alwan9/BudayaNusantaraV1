@@ -1,0 +1,1 @@
+<img class=" absolute right-0 bottom-101" src="assets/batik2.png" alt="">

@@ -1,0 +1,530 @@
+@import "tailwindcss";
+
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+@source '../**/*.blade.php';
+@source '../**/*.js';
+
+@theme {
+    --font-sans: "Instrument Sans", ui-sans-serif, system-ui, sans-serif,
+        "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
+        "Noto Color Emoji";
+}
+
+@import "animate.css";
+
+.konten {
+    padding: 15% 10%;
+}
+
+.blur {
+    /* From https://css.glass */
+    background: rgba(255, 255, 255, 0.23);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(7.6px);
+    -webkit-backdrop-filter: blur(7.6px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+body {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+    transition: all 0.3s ease-in-out;
+}
+* {
+    scroll-behavior: smooth;
+}
+
+h1 {
+    font-size: 3rem;
+}
+h2 {
+    font-size: 2.5rem;
+}
+h3 {
+    font-size: 2rem;
+}
+
+h4 {
+    font-size: 1.7rem;
+}
+p {
+    opacity: 90%;
+    color: #bd813e;
+}
+.img-projek {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+button {
+    padding: 12px 50px;
+}
+
+/* nav { */
+/* background: rgba(55, 55, 55, 0.164); transparan agar blur terlihat */
+/* backdrop-filter: blur(10px); efek blur */
+/* -webkit-backdrop-filter: blur(10px); untuk Safari */
+/* border-bottom: 1px solid rgba(255, 255, 255, 0.3); garis tipis */
+/* } */
+/* Tombol garis dengan gradasi border */
+
+/* Tombol garis biasa */
+.btn-white {
+    color: rgb(255, 255, 255);
+    padding: 8px 50px;
+    border: 3px solid rgb(255, 255, 255);
+    border-radius: 3rem;
+    background-color: transparent;
+    transition: all 0.3s ease;
+}
+
+.btn-white:hover {
+    background-color: rgba(192, 192, 192, 0.395);
+    border-color: rgb(255, 136, 1);
+    cursor: pointer;
+}
+.btn-line {
+    color: rgb(178, 89, 0);
+    padding: 4px 50px;
+    border: 3px solid rgb(204, 99, 0);
+    border-radius: 3rem;
+    background-color: transparent;
+    transition: all 0.3s ease;
+}
+
+.btn-line:hover {
+    background-color: rgba(189, 78, 13, 0.15);
+    border-color: rgb(175, 97, 7);
+    cursor: pointer;
+}
+
+.btn-bg {
+    color: white;
+    padding: 10px 50px;
+    border-radius: 2rem;
+    background: linear-gradient(
+        333deg,
+        rgb(151, 72, 11) 0%,
+        rgb(212, 120, 0) 100%
+    );
+    border: none;
+    transition: all 3.3s ease-in-out;
+    -webkit-transition: all 3.3s ease-in-out;
+    -moz-transition: all 3.3s ease-in-out;
+    -ms-transition: all 3.3s ease-in-out;
+    -o-transition: all 3.3s ease-in-out;
+}
+
+.btn-bg:hover {
+    background: linear-gradient(
+        333deg,
+        rgb(212, 120, 0) 0%,
+        rgb(255, 153, 51) 100%
+    );
+    cursor: pointer;
+    /*Opsional:;
+  sedikitmembesarsaathover*/
+    transform: scale(3.02);
+    -webkit-transform: scale(1.02);
+    -moz-transform: scale(1.02);
+    -ms-transform: scale(1.02);
+    -o-transform: scale(1.02);
+}
+
+
+/* Responsif */
+
+/* 📱 HP: padding kecil */
+@media (max-width: 639px) {
+    .btn-line,
+    .btn-bg {
+        padding: 8px 10px;
+        font-size: 0.875rem; /* text-sm */
+    }
+}
+
+/* 📱 Tablet: padding sedang */
+@media (min-width: 640px) and (max-width: 1023px) {
+    .btn-line,
+    .btn-bg {
+        padding: 10px 36px;
+        font-size: 1rem; /* text-base */
+    }
+}
+
+/* 💻 Laptop/Desktop: padding besar */
+@media (min-width: 1024px) {
+    .btn-line,
+    .btn-bg {
+        padding: 12px 50px;
+        font-size: 1.125rem; /* text-lg */
+    }
+}
+/* animasi */
+
+.slide-bottom {
+    -webkit-animation: slide-bottom 1.7s cubic-bezier(0.25, 0.46, 0.45, 0.94)
+        both;
+    animation: slide-bottom 1.7s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+@-webkit-keyframes slide-bottom {
+    0% {
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
+    100% {
+        -webkit-transform: translateY(30px);
+        transform: translateY(30px);
+        -moz-transform: translateY(30px);
+        -ms-transform: translateY(30px);
+        -o-transform: translateY(30px);
+    }
+}
+@keyframes slide-bottom {
+    0% {
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
+    100% {
+        -webkit-transform: translateY(30px);
+        transform: translateY(30px);
+    }
+}
+
+.shake-lr {
+    -webkit-animation: shake-lr 1.5s cubic-bezier(0.455, 0.03, 0.515, 0.955) 8s
+        both;
+    animation: shake-lr 1.5s cubic-bezier(0.455, 0.03, 0.515, 0.955) 8s both;
+}
+@-webkit-keyframes shake-lr {
+    0%,
+    100% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+        -webkit-transform-origin: 50% 50%;
+        transform-origin: 50% 50%;
+    }
+    10% {
+        -webkit-transform: rotate(8deg);
+        transform: rotate(8deg);
+    }
+    20%,
+    40%,
+    60% {
+        -webkit-transform: rotate(-10deg);
+        transform: rotate(-10deg);
+    }
+    30%,
+    50%,
+    70% {
+        -webkit-transform: rotate(10deg);
+        transform: rotate(10deg);
+    }
+    80% {
+        -webkit-transform: rotate(-8deg);
+        transform: rotate(-8deg);
+    }
+    90% {
+        -webkit-transform: rotate(8deg);
+        transform: rotate(8deg);
+    }
+}
+@keyframes shake-lr {
+    0%,
+    100% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+        -webkit-transform-origin: 50% 50%;
+        transform-origin: 50% 50%;
+    }
+    10% {
+        -webkit-transform: rotate(8deg);
+        transform: rotate(8deg);
+    }
+    20%,
+    40%,
+    60% {
+        -webkit-transform: rotate(-10deg);
+        transform: rotate(-10deg);
+    }
+    30%,
+    50%,
+    70% {
+        -webkit-transform: rotate(10deg);
+        transform: rotate(10deg);
+    }
+    80% {
+        -webkit-transform: rotate(-8deg);
+        transform: rotate(-8deg);
+    }
+    90% {
+        -webkit-transform: rotate(8deg);
+        transform: rotate(8deg);
+    }
+}
+
+/* maps */
+#container {
+    height: 500px;
+    min-width: 310px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* loading screen */
+
+#loading-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: black;
+    z-index: 999999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+#loading-screen.hide {
+    opacity: 0;
+    transform: scale(1.2); /* Zoom-out efek */
+    pointer-events: none;
+}
+
+#loading-text {
+    color: orange;
+    /* font-size: 2rem; */
+    font-family: sans-serif;
+}
+
+/* scrolll bar custom */
+/* width */
+::-webkit-scrollbar {
+    width: 13px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px rgb(229, 229, 229);
+    border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: rgb(255, 115, 0);
+    border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #b30000;
+}
+
+::-webkit-scrollbar:horizontal {
+    height: 1px; /* tinggi untuk scrollbar horizontal */
+}
+
+::-webkit-scrollbar:horizontal-thumb {
+    background-color: gray; /* warna scroll */
+    border-radius: 1px;
+}
+
+/* font */
+
+.merriweather {
+    font-family: "Merriweather", serif;
+    font-optical-sizing: auto;
+    /* font-weight: <weight>; */
+    font-style: normal;
+}
+
+/* overlay img full screen */
+/* Gambar thumbnail */
+.thumbnail {
+    width: 200px;
+    margin: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+.thumbnail:hover {
+    transform: scale(1.05);
+}
+
+/* Fullscreen overlay */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.74);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+}
+
+.fullscreen-image {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 10px;
+    /* box-shadow: 0 0 20px #000; */
+}
+
+/* infinity scroll */
+.scroll-wrapper {
+    width: 100%;
+    overflow: hidden;
+    height: 94px;
+    position: relative;
+}
+
+.scroll-content {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    will-change: transform;
+}
+
+.scroll-content img {
+    height: 100%;
+    width: auto;
+    object-fit: contain;
+    flex-shrink: 0;
+    cursor: grab;
+}
+
+/*  */
+@media (max-width: 768px) {
+    .scroll-wrapper {
+        height: 64px;
+    }
+}
+
+/* share icon  */
+.icon-box {
+    width: 2.5rem;
+    height: 2.5rem;
+}
+
+.icon-share {
+    width: 2.2rem;
+    height: 2.2rem;
+    color: #d97706;
+    transition: color 0.3s ease;
+}
+
+.icon-share:hover {
+    color: black;
+}
+
+.share-main {
+    transition: opacity 0.3s ease;
+}
+
+.group:hover .share-main {
+    opacity: 0;
+    visibility: hidden;
+}
+
+/* ccard animasi kategori */
+.cc-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-45deg);
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    background-color: #fff;
+    opacity: 0;
+    transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+    -webkit-transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+    -moz-transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+    -ms-transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+    -o-transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.custom-card:hover .cc-content {
+    transform: translate(-50%, -50%) rotate(0deg);
+    opacity: 1;
+}
+
+.custom-card:hover svg {
+    scale: 0;
+    transform: rotate(-45deg);
+}
+
+.blob {
+    aspect-ratio: 1;
+    clip-path: shape(
+        from 31.67% 88.13%,
+        curve to 22.09% 84% with 27.39% 85.62%,
+        curve to 12.8% 78.53% with 16.79% 82.37%,
+        curve to 10.65% 68.29% with 8.81% 74.69%,
+        curve to 9.9% 57.54% with 12.5% 61.9%,
+        curve to 5.85% 47.96% with 7.29% 53.19%,
+        curve to 4.37% 36.95% with 4.41% 42.72%,
+        curve to 11.27% 29.15% with 4.34% 31.18%,
+        curve to 17.85% 19.82% with 18.19% 27.11%,
+        curve to 23.43% 11.51% with 17.51% 12.53%,
+        curve to 35% 11.88% with 29.35% 10.49%,
+        curve to 45% 11.51% with 40.66% 13.26%,
+        curve to 54.16% 9.48% with 49.34% 9.75%,
+        curve to 64.26% 9.32% with 58.97% 9.21%,
+        curve to 74.01% 12.18% with 69.56% 9.42%,
+        curve to 80.33% 20.07% with 78.45% 14.95%,
+        curve to 85.94% 28.66% with 82.22% 25.19%,
+        curve to 93.51% 36.49% with 89.66% 32.12%,
+        curve to 96.68% 46.39% with 97.36% 40.85%,
+        curve to 93.11% 56.63% with 96.01% 51.93%,
+        curve to 87.28% 65.21% with 90.21% 61.33%,
+        curve to 80.95% 72.13% with 84.36% 69.1%,
+        curve to 76.52% 81.29% with 77.54% 75.15%,
+        curve to 71.62% 91.89% with 75.5% 87.44%,
+        curve to 61.58% 93.51% with 67.73% 96.35%,
+        curve to 50.35% 93.89% with 55.43% 90.66%,
+        curve to 40.61% 93.88% with 45.27% 97.11%,
+        curve to 31.67% 88.13% with 35.95% 90.65%
+    );
+}
+
+/* games */
+.popup-kuis {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(255, 255, 255, 0.95);
+    border: 2px solid #3498db;
+    padding: 30px 40px;
+    font-size: 24px;
+    font-weight: bold;
+    border-radius: 15px;
+    z-index: 1000;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    animation: fadeIn 0.5s ease-out;
+}
+
+.popup-kuis-content {
+    text-align: center;
+}
+ 
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translate(-50%, -60%);
+    }
+    to {
+        opacity: 1;
+        transform: translate(-50%, -50%);
+    }
+}
